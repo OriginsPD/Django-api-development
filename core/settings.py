@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework',
     'accounts',
-    'djoser'
+    'snippets',
+    'djoser',
+    'tasks'
 ]
 
 MIDDLEWARE = [
@@ -147,6 +149,8 @@ REST_FRAMEWORK = {
 DJOSER = {
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE': True,
+    # "SEND_ACTIVATION_EMAIL": True,
+    # "ACTIVATION_URL": "activate/{uid}/{token}",
     'SERIALIZERS': {
         'user_create': 'accounts.serializers.UserCreateSerializer',
         'user': 'accounts.serializers.UserCreateSerializer',
