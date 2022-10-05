@@ -21,5 +21,6 @@ urlpatterns = [
     path('auth/', include('accounts.urls')),
     path('', include('snippets.urls')),
     path('tasks', include('tasks.urls')),
+    path('comments', include('comments.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]

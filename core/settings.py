@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework',
     'accounts',
+    'comments',
     'snippets',
     'djoser',
     'tasks'

@@ -9,3 +9,11 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
         fields = ('id', 'content', 'subject', 'author')
+
+    # def create(self, validated_data):
+    #     subject_data = validated_data.pop('subject')
+    #     subject_instance = Comments.objects.create(**subject_data)
+    #     print(subject_instance)
+    #     # profile_instance = Profile.objects.create(
+    #     #     subject=subject_instance, **validated_data)
+    #     return subject_instance

@@ -1,6 +1,7 @@
 from rest_framework import generics
 from rest_framework import permissions
 from comments.models import *
+from tasks.models import *
 from comments.serializers import *
 # Create your views here.
 
@@ -11,7 +12,9 @@ class CommentsList(generics.ListCreateAPIView):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
-        serializer.save(subject=self.request.user)
+        subject_data = self.request.data
+        task = Tasks.objects.get(id=subject_data['subject'])
+        serializer.save(subject=task, author=self.request.user)
 
 
 class CommentsDetail(generics.RetrieveUpdateDestroyAPIView):
